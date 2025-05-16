@@ -1,5 +1,5 @@
 {% set name = "python-workflow-definition" %}
-{% set version = "0.0.1" %}
+{% set version = "0.1.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/python_workflow_definition-{{ version }}.tar.gz
-  sha256: c3219ca13fe2984e038f9b6e485d0348afec1681865657e102c1126fc6d9bc80
+  sha256: 3c05ebeda693c12c4330b4123a497f0a345a8c54b7ce893011f0c7fb437c8548
   patches:
     - pyproject.patch
 

@@ -1,6 +1,5 @@
 {% set name = "python-workflow-definition" %}
 {% set version = "0.1.0" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +14,7 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -24,11 +23,8 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - aiida-workgraph >=0.5.1,<=0.5.2
-    - httpcore >=0.15.0
     - numpy >=1.21,<2
-    - jobflow >=0.1.18,<=0.1.19
-    - pyiron_base >=0.11.10,<=0.11.11
+    - pydantic >=2.7.0,<=2.11.4
 
 test:
   imports:

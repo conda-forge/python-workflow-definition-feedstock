@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  name: python-workflow-definition
+  version: 0.1.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/python_workflow_definition-${{ version }}.tar.gz
+  sha256: 3c05ebeda693c12c4330b4123a497f0a345a8c54b7ce893011f0c7fb437c8548
+  patches:
+    - pyproject.patch
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.21,<2
+    - pydantic >=2.7.0,<=2.11.4
+
+tests:
+  - python:
+      imports:
+        - python_workflow_definition
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: Python Workflow Definition - workflow interoperability for aiida, jobflow and pyiron
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: http://pythonworkflow.github.io
+
+extra:
+  recipe-maintainers:
+    - jan-janssen

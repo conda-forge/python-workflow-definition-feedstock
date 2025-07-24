@@ -3,7 +3,7 @@ About python-workflow-definition-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-workflow-definition-feedstock/blob/main/LICENSE.txt)
 
-Home: http://pythonworkflow.github.io
+Home: http://pythonworkflow.github.io/
 
 Package license: BSD-3-Clause
 

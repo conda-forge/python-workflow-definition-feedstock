@@ -11,11 +11,9 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/python_workflow_definition-${{ version }}.tar.gz
   sha256: b44c89d920bfe3f5ef8e92425609abc5b75a0ba453c319f8339dc2b9e1b4ae4e
-  patches:
-    - pyproject.patch
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -26,8 +24,8 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - numpy >=1.21,<2
-    - pydantic >=2.7.0,<=2.11.4
+    - numpy >=1.21
+    - pydantic >=2.7.0,<=2.12.4
 
 tests:
   - python:

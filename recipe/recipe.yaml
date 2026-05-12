@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: python-workflow-definition
-  version: "0.1.4"
+  version: "0.1.5"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/python_workflow_definition-${{ version }}.tar.gz
-  sha256: c0ddfa7bf7493c34c06ff13714f1998bae5f747340ce36334298e87427879c26
+  sha256: 0915d0a0383744fb1c35a159c7fe6b664b1d5cf93b781c2f34f2d224e94310fc
 
 build:
   number: 0
